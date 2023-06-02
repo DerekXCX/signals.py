@@ -1,6 +1,6 @@
 # signals
 
-Short python module intended for the creation of function connections and signaling for objects. One of my first ever projects, might be vulnerable to memory-leaks. If any are spotted, please let me know.
+Short python module intended for the creation of function connections and signaling for objects. One of my first ever projects, might be vulnerable to memory-leaks or optimizations. If any are spotted, please let me know.
 
 # DOCUMENTATION : Creating new Signal Objects
 
