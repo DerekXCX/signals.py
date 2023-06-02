@@ -1,12 +1,12 @@
 import signals, sample_class, time, threading
 
-def connection_one(retrieved1):
+def functionOne(retrieved1):
     print(f"CONNECTION ONE: {retrieved1}")
     pass
-def connection_two(retrieved1, retrieved2, retrieved3):
+def functionTwo(retrieved1, retrieved2, retrieved3):
     print(f"CONNECTION TWO: {retrieved1}, {retrieved2}, {retrieved3}")
     pass
-def connection_three():
+def functionThree():
     time.sleep(1)
     print("CONNECTION THREE")
     pass 
@@ -14,15 +14,15 @@ def connection_three():
 # make sample class and establish connections
 new_sample_class = sample_class.create()
 
-connection1 = new_sample_class.testing_signal.Connect(connection_one)
-connection2 = new_sample_class.testing_signal.Connect(connection_two)
-connection3 = new_sample_class.testing_signal.Connect(connection_three)
+connection_1 = new_sample_class.testing_signal.Connect(functionOne)
+connection_2 = new_sample_class.testing_signal.Connect(functionTwo)
+connection_3 = new_sample_class.testing_signal.Connect(functionThree)
 
 # should run all three connections
 new_sample_class.fireSignal()
 
 # disconnects
-connection3.Disconnect()
+connection_3.Disconnect()
 
 # wait for all three to finish
 def runAfter():
